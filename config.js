@@ -131,6 +131,15 @@ window.WEDDING_CONFIG = {
   ],
   contactsNote: 'L.K. Electronics',
 
+  // ---------- Credit at the very bottom of the footer ----------
+  // logo: the first file that exists is used — drop the real channel logo in as swar-prarthana-logo.png
+  credit: {
+    presentedBy: 'Swar Prarthana',
+    url: 'https://www.youtube.com/channel/UCJPQcUbJcz1l6rLRtL_XMKA',
+    email: 'rakeshbhaardwaj@gmail.com',
+    logo: ['assets/brand/swar-prarthana-logo.png', 'assets/brand/swar-prarthana-logo.svg'],
+  },
+
   // ---------- Background music (on by default) ----------
   // Put an MP3 in assets/music/ and set src, e.g. 'assets/music/our-song.mp3'.
   // Leave empty to use a soft built-in instrumental melody.

@@ -10,8 +10,8 @@
     {
       "name": "shivam-weds-prachi",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["-e", "process.env.PORT='5176'; import('file:///C:/Users/nidhi/Desktop/claude/demo/shivam-weds-prachi/scripts/serve.mjs')"],
-      "port": 5176
+      "runtimeArgs": ["-e", "process.env.PORT='5177'; import('file:///C:/Users/nidhi/Rakeh-prj/shivam-weds-prachi/scripts/serve.mjs')"],
+      "port": 5177
     }
   ]
 }

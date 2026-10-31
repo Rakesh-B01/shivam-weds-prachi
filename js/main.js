@@ -470,6 +470,20 @@
     try { await navigator.clipboard.writeText(CFG.couple.hashtag); toast('Hashtag copied! Use it on your posts 📸'); }
     catch { toast(CFG.couple.hashtag); }
   });
+  // credit at the very bottom: logo (links to the channel), "Presented by …" and email
+  const credit = CFG.credit;
+  const creditBox = $('#footerCredit');
+  if (credit && creditBox) {
+    const link = (text) => credit.url ? `<a href="${esc(credit.url)}" target="_blank" rel="noopener">${text}</a>` : text;
+    creditBox.innerHTML = `
+      ${credit.url ? `<a class="footer__credit-logo" href="${esc(credit.url)}" target="_blank" rel="noopener" aria-label="${esc(credit.presentedBy)} on YouTube"><img alt="${esc(credit.presentedBy)} logo" width="56" height="56" loading="lazy" decoding="async"></a>` : ''}
+      <p class="footer__credit-by">Presented by ${link(`<strong>${esc(credit.presentedBy)}</strong>`)}</p>
+      ${credit.email ? `<p class="footer__credit-email">Email : <a href="mailto:${esc(credit.email)}">${esc(credit.email)}</a></p>` : ''}`;
+    const logo = $('img', creditBox);
+    if (logo) setImg(logo, credit.logo);
+  } else if (creditBox) {
+    creditBox.remove();
+  }
   $('#contacts').innerHTML = `<p class="footer__rsvp">R.S.V.P.${CFG.contactsNote ? ` · ${esc(CFG.contactsNote)}` : ''}</p>` + (CFG.contacts || []).map((c) => {
     const tel = c.phone.replace(/[^\d+]/g, '');
     const wa = tel.replace(/\D/g, '');
